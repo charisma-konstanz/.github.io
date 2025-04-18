@@ -1,0 +1,16 @@
+{
+  "name": "charisma-konstanz.de",
+  "version": "1.0.0",
+  "description": "Website:\r http://charisma-konstanz.de",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "stylelint": "^16.12.0"
+  }
+}
