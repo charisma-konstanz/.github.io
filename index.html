@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv=”Refresh” content=”0; URL=https://www.charisma-konstanz.de”/>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="description" content="Leckere Schawarma, Grill Hähnchen, Pizza, Döner, Falafel, Vegetarisches und vieles mehr! Jetzt einfach online bestellen & liefern lassen oder abholen.">
         <link rel="icon" type="image/png" sizes="32x32" href="images/logo-charisma-grillhähnchenhaus-essenbestellen-konstanz.png">
         <link rel="icon" type="image/png" sizes="16x16" href="images/logo-charisma-grillhähnchenhaus-essenbestellen-konstanz.png">        
@@ -109,6 +109,10 @@
           <iframe class="iframe" src="files/Charisma-Konstanz-Speisekarte.pdf">
           </iframe>
         </div>
+
+        <div align="center" class="container-menu-mobile" id="container-menu-mobile" style="display: none;">
+            <img src="images/speisekarte-mobil.png" alt="Speisekarte Mobil">
+        </div>
         <!-- MENU END -->
         <!-- MENU A -->
         <div id="div-menu-a">
@@ -139,41 +143,26 @@
             </div>
             <!-- RIGHT SIDE -->
             <div class="column">
-              <form   id="contact-form" 
-                      class="contact-form"
-                      method="POST"
-                      action="send_email_and_redirect.php">
-                <!-- form inputs -->
+              <form id="contact-form" class="contact-form">
                 <label class="form-label">Vorname:</label>
-                <input  class="form-input"
-                        type="text" 
-                        id="fname" 
-                        name="firstname" 
-                        placeholder=""
-                >
+                <input class="form-input" type="text" id="fname" name="firstname" placeholder="" required>
+
                 <label class="form-label">Nachname:</label>
-                <input  class="form-input"
-                        type="text" 
-                        id="lname" 
-                        name="lastname" 
-                        placeholder=""
-                >
+                <input class="form-input" type="text" id="lname" name="lastname" placeholder="" required>
+
                 <label class="form-label">E-Mail:</label>
-                <input  class="form-input"
-                        type="email" 
-                        id="email" 
-                        name="email"
-                        placeholder=""
-                >
-                <label class="form-label" class="subject">Nachricht:</label>
-                <textarea   class="form-textarea"
-                            id="subject" 
-                            name="subject"
-                            placeholder=""
-                            style="height: 200px">
-                </textarea>
-                <input class="submit" type="submit" value="Absenden">
+                <input class="form-input" type="email" id="email" name="email" placeholder="" required>
+
+                <label class="form-label">Nachricht:</label>
+                <textarea class="form-textarea" id="subject" name="subject" placeholder="" style="height: 200px" required></textarea>
+
+                <button class="submit" type="button" onclick="sendContactMessage()">Absenden</button>
               </form>
+
+              <div id="message-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: black; color: red; padding: 20px; border-radius: 5px; z-index: 1000;">
+                  Kontakt Nachricht rausgeschickt
+                  <button onclick="closePopup()" style="margin-top: 10px; background-color: red; color: white; border: none; padding: 10px; cursor: pointer;">Schließen</button>
+              </div>
             </div>
           </div> 
         </div>
@@ -276,5 +265,22 @@ const navigation = document.querySelector('.navigation');
 hamburgerMenu.addEventListener('click', function() {
     navigation.classList.toggle('active'); // Wenn der Button geklickt wird, wird die Klasse 'active' hinzugefügt oder entfernt
 });
+
+function sendContactMessage() {
+    const form = document.getElementById('contact-form');
+    const formData = new FormData(form);
+
+    // Simulate sending the message
+    console.log('Form data:', Object.fromEntries(formData));
+
+    // Show success message
+    const popup = document.getElementById('message-popup');
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    const popup = document.getElementById('message-popup');
+    popup.style.display = 'none';
+}
   </script>
 </html>

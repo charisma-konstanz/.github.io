@@ -1,12 +1,3 @@
-/* 
-@date 			02.02.2024 
-@copyright     charisma konstanz, mohammed.amesh, mohammed.amesh978@gmail.com
-*/
-/*
-logo src
-css flex nav with logo https://codepen.io/tedib/pen/mdypQbg
-*/
-/* START GLOBAL SETTINGS */
 :root {
   --darkest-grey: #171717;
   --darker-grey: #282828;
@@ -15,13 +6,18 @@ css flex nav with logo https://codepen.io/tedib/pen/mdypQbg
   --amber-yellow: #fdb750;
   --white: #f2f2f2;
 }
+
 * {
   padding: 0;
   margin: 0;
 }
-html {
-  overflow-y: scroll;
+
+html,
+body {
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  overflow-y: auto; /* Ermöglicht vertikales Scrollen */
 }
+
 body {
   position: relative;
   background-color: var(--darkest-grey);
@@ -31,6 +27,7 @@ body {
   max-height: 1024px;
   max-width: 1920px;
 }
+
 h1 {
   font-size: 24px;
   color: var(--lust-red);
@@ -38,82 +35,85 @@ h1 {
   margin-top: 100px;
   margin-bottom: 75px;
 }
+
 h2 {
   font-size: 20px;
   color: var(--lust-red);
 }
+
 h3 {
   font-size: 16px;
 }
+
 a {
   color: var(--orange);
 }
+
 b {
   text-decoration: underline;
   -webkit-text-decoration-color: var(--orange);
   text-decoration-color: var(--orange);
 }
-/*
-#icon-a {
-	color: transparent;
-}
-*/
+
 .social a {
   color: transparent;
 }
+
 .icon {
   width: 40px;
   height: auto;
   padding-right: 10px;
 }
-/* END GLOBAL SETTINGS */
-/* START NAV BAR */
+
 .flex-container {
-  /* display: none; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 75px;
   width: 100%;
   top: 0;
-  position: fixed;
-  background-color: var(--darkest-grey);
+  position: sticky; /* Ändert die Positionierung der Navbar zu sticky */
+  z-index: 1000; /* Stellt sicher, dass die Navbar über anderen Elementen bleibt */
+  background-color: var(--darkest-grey); /* Beibehaltung des Hintergrunds */
+  margin-bottom: 100px; /* Fügt einen Abstand von 100px unterhalb der Navigationsleiste hinzu */
 }
+
 .logo-img {
-  /* height: 75px; */
 }
+
 .navigation {
   display: flex;
 }
+
 .navigation a {
   display: block;
   padding: 3em;
   color: var(--white);
   text-decoration: none;
 }
-/* only mobile visible */
+
 .hamburgerMenu {
   display: block;
   cursor: pointer;
   position: absolute;
   top: 20px;
-  right: 10%; /* Button 10% vom rechten Rand */
+  right: 10%;
   width: 40px;
   height: 40px;
 }
+
 .hamburgerMenu img {
-  width: 100%; /* Bild innerhalb des Containers skalieren */
-  height: 100%; /* Bild innerhalb des Containers skalieren */
-  object-fit: contain; /* Verhindert Verzerrung des Bildes */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-/* END NAV BAR */
-/* START GALLERY */
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(700px, 100%), 1fr));
   grid-template-rows: auto;
   background-color: var(--darker-grey);
-  margin-top: 0px;
+  margin-top: 0;
   grid-template-areas:
     "eins-a eins-b"
     "zwei-b zwei-a"
@@ -121,6 +121,7 @@ b {
     "vier-b vier-a"
     "fuenf-b fuenf-a";
 }
+
 #grid-item-text {
   display: flex;
   background-color: var(--darker-grey);
@@ -129,21 +130,23 @@ b {
   justify-content: center;
   padding: 15%;
 }
+
 #grid-item-text h1 {
   font-size: 32px;
 }
+
 #grid-item-img {
   margin: auto;
   display: block;
 }
+
 #grid-item-img img {
   max-width: 75%;
   max-height: 1024px;
   height: auto;
   padding: 15%;
 }
-/* END GALLERY */
-/* START MENU */
+
 .container-menu {
   padding-top: 200px;
   display: flex;
@@ -151,29 +154,33 @@ b {
   align-items: center;
   justify-content: center;
 }
+
 .iframe {
   position: relative;
   width: 80%;
   height: 800px;
 }
+
 #div-menu-a {
   margin-top: 10%;
   text-align: center;
 }
+
 #a-pdf-download {
   margin-top: 20%;
   text-align: center;
 }
-/* END MENU */
-/* START CONTACT FORM */
+
 .row {
   display: flex;
   padding-left: 15%;
   padding-right: 15%;
 }
+
 .column {
   flex: 35%;
 }
+
 .container-contact-form {
   margin-top: 250px;
   margin-bottom: 250px;
@@ -181,9 +188,11 @@ b {
   text-align: center;
   background-color: var(--darker-grey);
 }
+
 .container-contact-form h1 {
   padding-bottom: -10px;
 }
+
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -191,24 +200,29 @@ b {
   padding-top: 10%;
   padding-bottom: 10%;
 }
+
 #icons-contact-form {
   padding-top: 40px;
   padding-bottom: 20px;
 }
+
 .form-label {
   margin: 20px;
   display: block;
   line-height: 24px;
 }
+
 .form-input,
 .form-textarea {
   display: block;
   padding: 6px;
   width: 400px;
 }
+
 .form-textarea {
   height: 10px;
 }
+
 .submit {
   border: none;
   padding: 12px;
@@ -219,8 +233,7 @@ b {
   color: var(--white);
   background-color: var(--lust-red);
 }
-/* CONTACT END */
-/* MAPS START */
+
 #container-maps-img {
   display: block;
   margin-left: auto;
@@ -229,19 +242,18 @@ b {
   max-width: 80%;
   max-height: auto;
 }
-/* MAPS END */
-/* FOOTER START */
+
 .grid-container-about {
   display: grid;
   grid-template-areas:
     "header header header header header header"
     "left left middle middle right right"
     "footer footer footer footer footer footer";
-  /* grid-column-gap: 10px; - if you want gap between the columns */
   padding-top: 150px;
   color: var(--white);
   text-align: center;
 }
+
 .h1-about {
   grid-area: header;
   background-color: var(--darker-grey);
@@ -251,23 +263,28 @@ b {
   font-size: 35px;
   padding-bottom: 100px;
 }
+
 #icons-footer {
   padding-bottom: 10px;
 }
+
 footer {
   background-color: #121315;
   color: #ffffff;
   font-size: 16px;
   margin-top: 250px;
 }
+
 footer * {
   box-sizing: border-box;
   border: none;
   outline: none;
 }
+
 footer .row {
   padding: 2em 1em;
 }
+
 footer .row.primary {
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
@@ -276,6 +293,7 @@ footer .row.primary {
   padding-top: 5%;
   padding-bottom: 5%;
 }
+
 footer .column {
   width: 100%;
   display: flex;
@@ -283,6 +301,7 @@ footer .column {
   padding: 0 2em;
   min-height: 15em;
 }
+
 footer h3 {
   width: 100%;
   text-align: left;
@@ -291,6 +310,7 @@ footer h3 {
   white-space: nowrap;
   padding-bottom: 40px;
 }
+
 footer ul {
   list-style: none;
   display: flex;
@@ -298,21 +318,26 @@ footer ul {
   padding: 0;
   margin: 0;
 }
+
 footer li:not(:first-child) {
   margin-top: 0.8em;
 }
+
 footer > ul li a {
   color: #ffffff;
   text-decoration: none;
 }
+
 footer > ul li a:hover {
   color: var(--amber-yellow);
 }
+
 footer > .about p {
   text-align: justify;
   line-height: 2;
   margin: 0;
 }
+
 footer > div.social {
   display: flex;
   justify-content: space-around;
@@ -320,65 +345,77 @@ footer > div.social {
   flex-direction: row;
   margin-top: 0.5em;
 }
+
 footer > .social a:hover {
   color: var(--amber-yellow);
 }
+
 footer > .row.secondary {
   display: flex;
   justify-content: space-around;
   text-align: center;
   background-color: var(--darker-grey);
 }
+
 footer > .row.secondary i {
   font-size: 1.8em;
   color: var(--amber-yellow);
 }
+
 footer > .row.secondary div {
   padding: 1em 0;
   width: 100%;
 }
+
 footer > .row.secondary div:hover {
   background-color: var(--lust-red);
 }
+
 footer > .copyright {
   padding: 0.3em 1em;
   background-color: var(--darkest-grey);
   text-align: center;
 }
+
 footer > .copyright p {
   font-size: 0.9em;
   text-align: center;
 }
-/* FOOTER END */
-/*--- MOBILE START ---*/
+
+#container-main-img {
+  padding: 0; /* Entfernt jegliches Padding */
+  margin: 0; /* Entfernt jeglichen Rand */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative; /* Stellt sicher, dass das Bild nicht in die obere Leiste gezogen wird */
+  top: 75px; /* Fügt einen Abstand zur oberen Leiste hinzu */
+}
+
 @media (max-width: 600px) {
-  /* GLOBAL SETTINGS */
   br {
     margin-bottom: 20px;
   }
+
   h1 {
     font-size: 1.2rem;
   }
+
   #grid-item-text h1 {
     font-size: 1rem;
   }
+
   h2 {
     font-size: 1rem;
   }
+
   h3 {
     font-size: 0.5rem;
   }
+
   a {
     font-size: 0.8rem;
   }
-
-  /* GLOBAL SETTINGS END */
-
-  /* TODO: mobile navigation 
-		https://flexicajourney.com/how-to-create-a-responsive-navbar-using-flexbox/
-	*/
-
-  /* If the viewport width is small, hide the navigation and searchbar */
 
   .flex-container {
     display: flex;
@@ -389,9 +426,11 @@ footer > .copyright p {
     top: 0;
     background-color: var(--darkest-grey);
     padding: 0 10%;
+    margin-bottom: 100px; /* Fügt einen Abstand von 100px zwischen der Leiste und dem Hauptbild hinzu */
   }
+
   .navigation {
-    display: none; /* Das Menü ist standardmäßig verborgen */
+    display: none;
     flex-direction: column;
     align-items: center;
     position: absolute;
@@ -402,11 +441,11 @@ footer > .copyright p {
     background-color: var(--darkest-grey);
     justify-content: center;
   }
-  /* Display the hamburger icon on mobile */
+
   .hamburgerMenu {
-    display: block; /* Show the hamburger icon on mobile */
+    display: block;
   }
-  /* nur anzeigen wenn User auf hamburgerMenu klickt */
+
   .flex-container {
     flex-direction: column;
     align-items: start;
@@ -416,37 +455,36 @@ footer > .copyright p {
     column-gap: 30px;
     row-gap: 10px;
   }
-  /* ENDE: nur anzeigen wenn User auf hamburgerMenu klickt */
+
   .navigation.active {
     display: flex;
   }
 
-  /* Todo MAIN IMG soll unterhalb der oberen Leiste angezeigt werden */
-  /* old MAIN IMG 
   #container-main-img {
-    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
     height: auto;
-    padding-top: 80%;
+    object-fit: cover;
+    margin-top: 150px; /* Erhöht den sichtbaren Rand zwischen dem Bild und der mobilen Navleiste auf 150px */
   }
-   old ende */
-  #container-main-img {
-    padding-top: 50%; /* Reduzierter Abstand oben nur für mobile Ansicht */
-    width: 100%; /* Setzt die Breite des Bildes auf 100% */
-    height: auto; /* Stellt sicher, dass das Bild die richtige Höhe behält */
-    object-fit: cover; /* Bild passt sich an, ohne Verzerrung */
-  }
+
   .eins-a {
     grid-area: eins-a;
   }
+
   .eins-b {
     grid-area: eins-b;
   }
+
   .zwei-a {
     grid-area: zwei-a;
   }
+
   .zwei-b {
     grid-area: zwei-b;
   }
+
   .grid-container {
     margin-top: 20%;
     grid-template-columns: 1fr;
@@ -456,6 +494,7 @@ footer > .copyright p {
       "zwei-a"
       "zwei-b";
   }
+
   .iframe {
     position: relative;
     top: 0;
@@ -465,39 +504,45 @@ footer > .copyright p {
     width: 90%;
     height: auto;
   }
+
   #div-menu-a {
     margin-top: 35%;
     margin-bottom: 200px;
     text-align: center;
   }
-  /* CONTACT FORM START */
+
   #container-contact-form {
     margin-top: 100px;
     margin-bottom: 150px;
   }
+
   #container-maps-img {
     margin-top: 20px;
   }
+
   .row {
     flex-flow: row wrap;
   }
+
   .column {
     flex: 80%;
     width: 80%;
     margin-bottom: 50%;
   }
+
   .form-input {
     width: 100%;
   }
+
   .form-textarea {
     width: 100%;
   }
-  /* CONTACT FORM END */
-  /* FOOTER START */
+
   .footer {
     margin-top: 100px !important;
     font-size: 16px;
   }
+
   footer .row.primary {
     flex-direction: column;
     grid-template-columns: none;
@@ -505,66 +550,78 @@ footer > .copyright p {
     text-align: center;
     align-items: center;
   }
+
   footer h3 {
     text-align: center;
     margin-bottom: 30px;
   }
+
   #column-about {
     margin-top: 150px;
   }
+
   .column {
     margin-bottom: 75px;
   }
+
   .row.secondary {
     flex-direction: column;
     padding-top: 75px;
     padding-bottom: 75px;
   }
+
   .icons-footer {
-    font-size: 20px; /* ??? */
+    font-size: 20px;
   }
+
   footer > .copyright {
     font-size: 12px;
   }
-  /* FOOTER END */
+
+  #container-menu {
+    display: none; /* Versteckt das iframe in der mobilen Ansicht */
+  }
+
+  #container-menu-mobile {
+    display: block !important; /* Stellt sicher, dass das Bild in der mobilen Ansicht angezeigt wird */
+    text-align: center;
+  }
+
+  #container-menu-mobile img {
+    margin-top: 150px; /* Erhöht den oberen Rand auf 150 Pixel */
+    max-width: 94%; /* Reduziert die Breite um 6%, um 3% Rand auf jeder Seite zu schaffen */
+    height: auto;
+    margin-left: auto; /* Zentriert das Bild */
+    margin-right: auto; /* Zentriert das Bild */
+    display: block; /* Stellt sicher, dass das Bild als Blockelement angezeigt wird */
+  }
 }
-/* Fix for Desktop Navigation */
+
 @media (min-width: 601px) {
   .navigation {
-    display: flex; /* Show the navigation menu on desktop */
-    flex-direction: row; /* Ensure horizontal layout */
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    position: static; /* Reset position for desktop */
-    width: auto; /* Reset width for desktop */
-    height: auto; /* Reset height for desktop */
-    background-color: transparent; /* Remove background color */
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
   }
 
   .hamburgerMenu {
-    display: none; /* Hide the hamburger menu on desktop */
-  }
-}
-@media only screen and (min-width: 600px) {
-}
-@media only screen and (min-width: 768px) {
-  /*
-	.row.primary {
-		grid-template-columns: 1fr;
-	}
-	.row.secondary {
-		flex-direction: column;
-	}
-	*/
-}
-@media only screen and (min-width: 992px) {
-}
-@media only screen and (min-width: 1200px) {
-}
-/* MOBILE END */
-/*
-hide:
-  div.example {
     display: none;
   }
-*/
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
