@@ -14,8 +14,8 @@
 
 html,
 body {
-  overflow-x: hidden; /* Verhindert horizontales Scrollen */
-  overflow-y: auto; /* Ermöglicht vertikales Scrollen */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -72,10 +72,10 @@ b {
   height: 75px;
   width: 100%;
   top: 0;
-  position: sticky; /* Ändert die Positionierung der Navbar zu sticky */
-  z-index: 1000; /* Stellt sicher, dass die Navbar über anderen Elementen bleibt */
-  background-color: var(--darkest-grey); /* Beibehaltung des Hintergrunds */
-  margin-bottom: 100px; /* Fügt einen Abstand von 100px unterhalb der Navigationsleiste hinzu */
+  position: sticky;
+  z-index: 1000;
+  background-color: var(--darkest-grey);
+  margin-bottom: 100px;
 }
 
 .logo-img {
@@ -383,13 +383,13 @@ footer > .copyright p {
 }
 
 #container-main-img {
-  padding: 0; /* Entfernt jegliches Padding */
-  margin: 0; /* Entfernt jeglichen Rand */
+  padding: 0;
+  margin: 0;
   width: 100%;
   height: auto;
   object-fit: cover;
-  position: relative; /* Stellt sicher, dass das Bild nicht in die obere Leiste gezogen wird */
-  top: 75px; /* Fügt einen Abstand zur oberen Leiste hinzu */
+  position: relative;
+  top: 75px;
 }
 
 @media (max-width: 600px) {
@@ -426,7 +426,7 @@ footer > .copyright p {
     top: 0;
     background-color: var(--darkest-grey);
     padding: 0 10%;
-    margin-bottom: 100px; /* Fügt einen Abstand von 100px zwischen der Leiste und dem Hauptbild hinzu */
+    margin-bottom: 100px;
   }
 
   .navigation {
@@ -466,7 +466,7 @@ footer > .copyright p {
     width: 100%;
     height: auto;
     object-fit: cover;
-    margin-top: 150px; /* Erhöht den sichtbaren Rand zwischen dem Bild und der mobilen Navleiste auf 150px */
+    margin-top: 150px;
   }
 
   .eins-a {
@@ -486,13 +486,51 @@ footer > .copyright p {
   }
 
   .grid-container {
-    margin-top: 20%;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     grid-template-areas:
       "eins-a"
       "eins-b"
       "zwei-a"
-      "zwei-b";
+      "zwei-b"
+      "drei-b"
+      "drei-a"
+      "vier-b"
+      "vier-a"
+      "fuenf-a"
+      "fuenf-b" !important;
+    margin-top: 20%;
+  }
+
+  .eins-a {
+    grid-area: eins-a !important;
+  }
+  .eins-b {
+    grid-area: eins-b !important;
+  }
+  .zwei-a {
+    grid-area: zwei-a !important;
+  }
+  .zwei-b {
+    grid-area: zwei-b !important;
+  }
+  .drei-a {
+    grid-area: drei-a !important;
+  }
+  .drei-b {
+    grid-area: drei-b !important;
+  }
+  .vier-a {
+    grid-area: vier-a !important;
+  }
+  .vier-b {
+    grid-area: vier-b !important;
+  }
+  .fuenf-a {
+    grid-area: fuenf-a !important;
+  }
+  .fuenf-b {
+    grid-area: fuenf-b !important;
+    margin-bottom: 100px !important;
   }
 
   .iframe {
@@ -538,7 +576,7 @@ footer > .copyright p {
     width: 100%;
   }
 
-  .footer {
+  #footer {
     margin-top: 100px !important;
     font-size: 16px;
   }
@@ -579,21 +617,21 @@ footer > .copyright p {
   }
 
   #container-menu {
-    display: none; /* Versteckt das iframe in der mobilen Ansicht */
+    display: none;
   }
 
   #container-menu-mobile {
-    display: block !important; /* Stellt sicher, dass das Bild in der mobilen Ansicht angezeigt wird */
+    display: block !important;
     text-align: center;
   }
 
   #container-menu-mobile img {
-    margin-top: 150px; /* Erhöht den oberen Rand auf 150 Pixel */
-    max-width: 94%; /* Reduziert die Breite um 6%, um 3% Rand auf jeder Seite zu schaffen */
+    margin-top: 150px;
+    max-width: 94%;
     height: auto;
-    margin-left: auto; /* Zentriert das Bild */
-    margin-right: auto; /* Zentriert das Bild */
-    display: block; /* Stellt sicher, dass das Bild als Blockelement angezeigt wird */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 }
 
